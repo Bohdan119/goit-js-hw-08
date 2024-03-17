@@ -88,7 +88,6 @@ myGallery.addEventListener('click', handleLargeImage);
 
 function handleLargeImage(evt) {
   evt.preventDefault();
-
 if (evt.target.nodeName !== 'IMG') return; 
   const largeImg = evt.target.dataset.source;
   const lightBox = basicLightbox.create(`
@@ -99,9 +98,10 @@ if (evt.target.nodeName !== 'IMG') return;
     </div>
 `);
 
-
-
-lightBox.show();
-console.log(largeImg);
+  lightBox.show();
+  
+  const modalImage = lightBox.element().querySelector('.large-images');
+  modalImage.addEventListener('click', () => lightBox.close());
 }
+
 
