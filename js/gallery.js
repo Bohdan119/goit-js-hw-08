@@ -65,6 +65,7 @@ const images = [
 ];
 
 
+
 const myGallery = document.querySelector('.gallery');
 
 const galleryMarkup = images.map(({ preview, original, description }) =>
@@ -100,8 +101,13 @@ if (evt.target.nodeName !== 'IMG') return;
 
   lightBox.show();
   
-  const modalImage = lightBox.element().querySelector('.large-images');
-  modalImage.addEventListener('click', () => lightBox.close());
+
+  document.querySelector('.modal').addEventListener('click', () => {
+  
+    lightBox.close();
+  });
+
 }
+
 
 
